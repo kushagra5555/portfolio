@@ -19,30 +19,40 @@ HOW TO DEPLOY ON GITHUB PAGES:
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kushagra Chaudhary | Web Developer | Dehradun</title>
-  <meta name="description" content="Portfolio of Kushagra Chaudhary, a freelance web developer from Dehradun building fast, beautiful, and functional websites for real businesses.">
-  <meta name="theme-color" content="#0F0E0B">
+  <title>Kushagra Chaudhary | Elite Web Developer</title>
+  <meta name="description" content="Kushagra Chaudhary builds high-conviction websites for real businesses from Dehradun, blending premium UI, frontend performance, and real client delivery.">
+  <meta name="theme-color" content="#070b14">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #0f0e0b;
-      --surface: #1a1914;
-      --surface-strong: #222017;
-      --surface-soft: rgba(26, 25, 20, 0.7);
-      --border: rgba(201, 168, 76, 0.18);
-      --border-strong: rgba(232, 201, 122, 0.42);
-      --gold: #c9a84c;
-      --gold-light: #e8c97a;
-      --text: #faf7f0;
-      --muted: #8a8880;
-      --shadow: 0 24px 70px rgba(0, 0, 0, 0.38);
-      --radius-lg: 28px;
-      --radius-md: 20px;
+      --bg: #070b14;
+      --bg-2: #0d1628;
+      --surface: rgba(12, 19, 34, 0.72);
+      --surface-strong: rgba(18, 28, 48, 0.9);
+      --surface-soft: rgba(255, 255, 255, 0.04);
+      --line: rgba(255, 255, 255, 0.08);
+      --line-strong: rgba(255, 255, 255, 0.14);
+      --text: #f5f7fb;
+      --muted: #95a0b8;
+      --muted-2: #6e7a95;
+      --teal: #65f2d0;
+      --teal-deep: #2ec7af;
+      --amber: #f5c15d;
+      --amber-soft: #ffd98d;
+      --danger: #ffb4a4;
+      --ok: #b9ffd6;
+      --shadow-xl: 0 40px 120px rgba(0, 0, 0, 0.48);
+      --shadow-card: 0 18px 50px rgba(0, 0, 0, 0.28);
+      --radius-xl: 34px;
+      --radius-lg: 24px;
+      --radius-md: 18px;
       --radius-sm: 14px;
-      --nav-height: 80px;
-      --container: min(1160px, calc(100vw - 2rem));
+      --nav-height: 84px;
+      --container: min(1180px, calc(100vw - 2rem));
+      --spot-x: 50%;
+      --spot-y: 22%;
     }
 
     * {
@@ -55,11 +65,12 @@ HOW TO DEPLOY ON GITHUB PAGES:
 
     body {
       margin: 0;
-      font-family: "DM Sans", sans-serif;
-      background:
-        radial-gradient(circle at top, rgba(201, 168, 76, 0.14), transparent 28%),
-        linear-gradient(180deg, #12110d 0%, #0f0e0b 35%, #0b0a08 100%);
+      font-family: "Plus Jakarta Sans", sans-serif;
       color: var(--text);
+      background:
+        radial-gradient(circle at var(--spot-x) var(--spot-y), rgba(101, 242, 208, 0.12), transparent 20%),
+        radial-gradient(circle at 85% 8%, rgba(245, 193, 93, 0.12), transparent 18%),
+        linear-gradient(180deg, #0a1120 0%, #070b14 30%, #08101f 100%);
       overflow-x: hidden;
     }
 
@@ -72,72 +83,84 @@ HOW TO DEPLOY ON GITHUB PAGES:
       text-decoration: none;
     }
 
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
     button,
     input,
     textarea {
       font: inherit;
     }
 
-    ::selection {
-      background: rgba(201, 168, 76, 0.28);
-      color: var(--text);
+    img {
+      max-width: 100%;
+      display: block;
     }
 
-    .page-noise,
-    .grid-overlay,
-    #hero-particles {
+    ::selection {
+      background: rgba(101, 242, 208, 0.28);
+      color: white;
+    }
+
+    #cosmic-canvas,
+    .global-noise,
+    .global-grid,
+    .global-vignette {
       position: fixed;
       inset: 0;
       pointer-events: none;
     }
 
-    .page-noise {
-      opacity: 0.08;
-      background-image:
-        linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-      background-size: 120px 120px;
-      mask-image: radial-gradient(circle at center, black, transparent 78%);
-    }
-
-    .grid-overlay {
-      opacity: 0.18;
-      background-image:
-        linear-gradient(rgba(201, 168, 76, 0.08) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(201, 168, 76, 0.08) 1px, transparent 1px);
-      background-size: 70px 70px;
-      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.78), transparent 90%);
-    }
-
-    #hero-particles {
+    #cosmic-canvas {
       z-index: 0;
+    }
+
+    .global-noise {
+      z-index: 1;
+      opacity: 0.07;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+      background-size: 140px 140px;
+      mask-image: radial-gradient(circle at center, black 32%, transparent 95%);
+    }
+
+    .global-grid {
+      z-index: 1;
+      opacity: 0.35;
+      background-image:
+        linear-gradient(rgba(101, 242, 208, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(101, 242, 208, 0.06) 1px, transparent 1px);
+      background-size: 82px 82px;
+      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.85), transparent 92%);
+    }
+
+    .global-vignette {
+      z-index: 1;
+      background:
+        radial-gradient(circle at center, transparent 30%, rgba(4, 8, 16, 0.36) 75%, rgba(3, 5, 10, 0.82) 100%);
     }
 
     .site-header {
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 20;
-      transition: background 0.3s ease, backdrop-filter 0.3s ease, border-color 0.3s ease;
+      inset: 0 0 auto;
+      z-index: 30;
       border-bottom: 1px solid transparent;
+      transition: background 0.3s ease, border-color 0.3s ease, backdrop-filter 0.3s ease;
     }
 
     .site-header.scrolled {
-      background: rgba(15, 14, 11, 0.76);
-      backdrop-filter: blur(18px);
-      border-color: rgba(201, 168, 76, 0.12);
+      background: rgba(7, 11, 20, 0.72);
+      backdrop-filter: blur(20px);
+      border-color: rgba(255, 255, 255, 0.08);
+    }
+
+    .nav-shell,
+    .container,
+    .footer-inner {
+      width: var(--container);
+      margin: 0 auto;
     }
 
     .nav-shell {
-      width: var(--container);
-      margin: 0 auto;
-      height: var(--nav-height);
+      min-height: var(--nav-height);
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -145,50 +168,47 @@ HOW TO DEPLOY ON GITHUB PAGES:
     }
 
     .logo {
-      font-family: "DM Mono", monospace;
-      color: var(--gold-light);
-      font-size: 1.1rem;
-      letter-spacing: 0.1em;
-      padding: 0.5rem 0.8rem;
-      border: 1px solid rgba(201, 168, 76, 0.2);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.75rem 1rem;
       border-radius: 999px;
-      background: rgba(255, 255, 255, 0.02);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.92rem;
+      letter-spacing: 0.08em;
+      color: var(--amber-soft);
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    }
+
+    .logo::before {
+      content: "";
+      width: 0.5rem;
+      height: 0.5rem;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--teal), #d6fff5);
+      box-shadow: 0 0 18px rgba(101, 242, 208, 0.7);
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 0.4rem;
+      gap: 0.3rem;
     }
 
     .nav-links a {
       position: relative;
-      padding: 0.7rem 1rem;
+      padding: 0.9rem 1rem;
+      border-radius: 999px;
       color: var(--muted);
-      transition: color 0.25s ease;
-    }
-
-    .nav-links a::after {
-      content: "";
-      position: absolute;
-      left: 1rem;
-      right: 1rem;
-      bottom: 0.45rem;
-      height: 1px;
-      transform: scaleX(0);
-      transform-origin: left;
-      background: linear-gradient(90deg, var(--gold), var(--gold-light));
-      transition: transform 0.25s ease;
+      transition: color 0.25s ease, background 0.25s ease;
     }
 
     .nav-links a:hover,
     .nav-links a.active {
       color: var(--text);
-    }
-
-    .nav-links a:hover::after,
-    .nav-links a.active::after {
-      transform: scaleX(1);
+      background: rgba(255, 255, 255, 0.05);
     }
 
     .menu-toggle {
@@ -196,8 +216,8 @@ HOW TO DEPLOY ON GITHUB PAGES:
       width: 48px;
       height: 48px;
       border-radius: 50%;
-      border: 1px solid rgba(201, 168, 76, 0.24);
-      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.04);
       color: var(--text);
       align-items: center;
       justify-content: center;
@@ -245,93 +265,89 @@ HOW TO DEPLOY ON GITHUB PAGES:
       transform: rotate(-45deg);
     }
 
-    main {
+    main,
+    footer {
       position: relative;
-      z-index: 1;
+      z-index: 2;
     }
 
     section {
-      position: relative;
       padding: 6rem 0;
-    }
-
-    .container {
-      width: var(--container);
-      margin: 0 auto;
     }
 
     .eyebrow {
       display: inline-flex;
       align-items: center;
-      gap: 0.65rem;
-      padding: 0.5rem 0.9rem;
+      gap: 0.7rem;
+      padding: 0.58rem 0.9rem;
       border-radius: 999px;
-      color: var(--gold-light);
-      font-family: "DM Mono", monospace;
+      font-family: "IBM Plex Mono", monospace;
       font-size: 0.78rem;
-      letter-spacing: 0.08em;
       text-transform: uppercase;
-      background: rgba(201, 168, 76, 0.08);
-      border: 1px solid rgba(201, 168, 76, 0.16);
+      letter-spacing: 0.08em;
+      color: var(--teal);
+      background: rgba(101, 242, 208, 0.08);
+      border: 1px solid rgba(101, 242, 208, 0.16);
+      width: fit-content;
     }
 
     .eyebrow::before {
       content: "";
-      width: 0.4rem;
-      height: 0.4rem;
+      width: 0.42rem;
+      height: 0.42rem;
       border-radius: 50%;
-      background: var(--gold);
-      box-shadow: 0 0 18px rgba(201, 168, 76, 0.7);
+      background: var(--teal);
+      box-shadow: 0 0 14px rgba(101, 242, 208, 0.8);
     }
 
     .section-heading {
       display: grid;
       gap: 1rem;
-      margin-bottom: 2.8rem;
-      max-width: 760px;
+      margin-bottom: 2.7rem;
+      max-width: 780px;
     }
 
     .section-heading h2 {
       margin: 0;
-      font-family: "Playfair Display", serif;
-      font-size: clamp(2rem, 4vw, 3.5rem);
-      line-height: 1.05;
-      letter-spacing: -0.03em;
+      font-family: "Syne", sans-serif;
+      font-size: clamp(2.2rem, 4vw, 4rem);
+      line-height: 1;
+      letter-spacing: -0.05em;
     }
 
     .section-heading p {
       margin: 0;
       color: var(--muted);
-      font-size: 1.05rem;
-      line-height: 1.75;
+      line-height: 1.85;
+      font-size: 1.04rem;
     }
 
     .hero {
       min-height: 100vh;
+      padding-top: calc(var(--nav-height) + 2.5rem);
+      padding-bottom: 2rem;
       display: flex;
       align-items: center;
-      padding-top: calc(var(--nav-height) + 2rem);
-      padding-bottom: 3rem;
     }
 
     .hero-layout {
       display: grid;
-      grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
-      align-items: center;
+      grid-template-columns: minmax(0, 1.02fr) minmax(360px, 0.98fr);
       gap: 2rem;
+      align-items: center;
     }
 
     .hero-copy {
       display: grid;
-      gap: 1.4rem;
+      gap: 1.35rem;
     }
 
     .hero-title {
       margin: 0;
-      font-family: "Playfair Display", serif;
-      font-size: clamp(3.6rem, 9vw, 6.8rem);
-      line-height: 0.94;
-      letter-spacing: -0.055em;
+      font-family: "Syne", sans-serif;
+      font-size: clamp(3.6rem, 8vw, 7.6rem);
+      line-height: 0.9;
+      letter-spacing: -0.08em;
       max-width: 9ch;
     }
 
@@ -342,30 +358,35 @@ HOW TO DEPLOY ON GITHUB PAGES:
 
     .hero-title .line span {
       display: inline-block;
-      transform: translateY(110%);
+      transform: translateY(115%);
       opacity: 0;
-      animation: riseIn 0.85s forwards;
+      animation: riseIn 0.9s forwards;
     }
 
     .hero-title .line:nth-child(2) span {
-      animation-delay: 0.14s;
+      animation-delay: 0.12s;
+    }
+
+    .hero-title em {
+      font-style: normal;
+      color: var(--amber-soft);
     }
 
     .hero-role {
       display: flex;
-      flex-wrap: wrap;
       align-items: center;
-      gap: 0.75rem;
+      flex-wrap: wrap;
+      gap: 0.8rem;
       min-height: 2.2rem;
-      font-size: clamp(1rem, 3vw, 1.35rem);
       color: var(--muted);
+      font-size: clamp(1rem, 2.2vw, 1.2rem);
     }
 
     .hero-role strong {
-      color: var(--gold-light);
-      font-family: "DM Mono", monospace;
+      min-width: 16ch;
+      color: var(--teal);
+      font-family: "IBM Plex Mono", monospace;
       font-weight: 500;
-      min-width: 15ch;
     }
 
     .typewriter::after {
@@ -375,363 +396,537 @@ HOW TO DEPLOY ON GITHUB PAGES:
       height: 1.1em;
       vertical-align: -0.1em;
       margin-left: 0.18rem;
-      background: var(--gold-light);
-      animation: blink 0.8s step-end infinite;
+      background: var(--teal);
+      animation: blink 0.85s step-end infinite;
     }
 
-    .hero-copy p {
+    .hero-lead {
       margin: 0;
-      max-width: 620px;
-      font-size: 1.12rem;
-      line-height: 1.85;
-      color: #d8d3c7;
+      max-width: 660px;
+      font-size: 1.08rem;
+      line-height: 1.95;
+      color: #dce3f2;
+    }
+
+    .hero-micro {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+
+    .micro-chip,
+    .skill-pill,
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 2rem;
+      padding: 0.46rem 0.82rem;
+      border-radius: 999px;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.75rem;
+      color: #dbeaf6;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .micro-chip.hot {
+      color: #07121d;
+      background: linear-gradient(135deg, var(--amber-soft), var(--amber));
+      border-color: transparent;
     }
 
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
       gap: 1rem;
-      padding-top: 0.5rem;
+      padding-top: 0.45rem;
     }
 
     .button,
     .ghost-button,
     .project-link,
     .submit-button {
+      position: relative;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 0.6rem;
-      min-height: 3.4rem;
-      padding: 0.95rem 1.4rem;
+      min-height: 3.45rem;
+      padding: 0.96rem 1.45rem;
       border-radius: 999px;
       font-weight: 700;
-      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+      overflow: hidden;
       cursor: pointer;
+      transition: transform 0.28s ease, box-shadow 0.28s ease, background 0.28s ease, border-color 0.28s ease;
+    }
+
+    .button::before,
+    .ghost-button::before,
+    .project-link::before,
+    .submit-button::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(115deg, transparent 0%, rgba(255, 255, 255, 0.26) 50%, transparent 100%);
+      transform: translateX(-120%);
+      transition: transform 0.7s ease;
+    }
+
+    .button:hover::before,
+    .ghost-button:hover::before,
+    .project-link:hover::before,
+    .submit-button:hover::before {
+      transform: translateX(120%);
     }
 
     .button,
-    .submit-button {
-      color: #140f03;
-      background: linear-gradient(135deg, var(--gold-light), var(--gold));
-      box-shadow: 0 16px 30px rgba(201, 168, 76, 0.24);
+    .submit-button,
+    .project-link {
+      color: #07121d;
+      background: linear-gradient(135deg, var(--teal), #c8fff4);
       border: none;
+      box-shadow: 0 18px 40px rgba(101, 242, 208, 0.22);
     }
 
-    .ghost-button,
-    .project-link.secondary {
+    .ghost-button {
       color: var(--text);
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(201, 168, 76, 0.18);
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
     }
 
     .button:hover,
     .ghost-button:hover,
     .project-link:hover,
     .submit-button:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 22px 38px rgba(201, 168, 76, 0.18);
-      border-color: rgba(232, 201, 122, 0.38);
-    }
-
-    .hero-panel {
-      position: relative;
-      padding: 1.5rem;
-      border-radius: var(--radius-lg);
-      background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02)),
-        rgba(26, 25, 20, 0.82);
-      border: 1px solid rgba(201, 168, 76, 0.15);
-      box-shadow: var(--shadow);
-      overflow: hidden;
-      min-height: 470px;
-      isolation: isolate;
-    }
-
-    .hero-panel::before {
-      content: "";
-      position: absolute;
-      inset: auto -25% -20% auto;
-      width: 260px;
-      height: 260px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(201, 168, 76, 0.28), transparent 70%);
-      filter: blur(10px);
-      z-index: -1;
-    }
-
-    .panel-topline {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1rem;
-      margin-bottom: 1.5rem;
-      color: var(--muted);
-      font-family: "DM Mono", monospace;
-      font-size: 0.82rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .status-dot {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .status-dot::before {
-      content: "";
-      width: 0.55rem;
-      height: 0.55rem;
-      border-radius: 50%;
-      background: #7ee787;
-      box-shadow: 0 0 14px rgba(126, 231, 135, 0.7);
-    }
-
-    .hero-card-stack {
-      display: grid;
-      gap: 1rem;
-    }
-
-    .hero-card {
-      padding: 1.2rem;
-      border-radius: 22px;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(201, 168, 76, 0.1);
-    }
-
-    .hero-card.featured {
-      padding: 1.35rem;
-      background:
-        linear-gradient(135deg, rgba(201, 168, 76, 0.12), rgba(255, 255, 255, 0.04)),
-        rgba(255, 255, 255, 0.03);
-    }
-
-    .hero-card h3,
-    .hero-card p {
-      margin: 0;
-    }
-
-    .hero-card h3 {
-      font-size: 1.05rem;
-      margin-bottom: 0.45rem;
-    }
-
-    .hero-card p {
-      color: var(--muted);
-      line-height: 1.7;
-      font-size: 0.98rem;
-    }
-
-    .chip-row,
-    .project-tags,
-    .skills-cloud {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.7rem;
-    }
-
-    .chip,
-    .skill-pill,
-    .tag {
-      display: inline-flex;
-      align-items: center;
-      min-height: 2rem;
-      padding: 0.45rem 0.75rem;
-      border-radius: 999px;
-      font-family: "DM Mono", monospace;
-      font-size: 0.78rem;
-      color: #ede5cb;
-      background: rgba(201, 168, 76, 0.08);
-      border: 1px solid rgba(201, 168, 76, 0.14);
+      transform: translateY(-4px);
+      box-shadow: 0 24px 50px rgba(0, 0, 0, 0.25);
     }
 
     .hero-scroll {
-      margin-top: 1.25rem;
       display: inline-flex;
       align-items: center;
-      gap: 0.7rem;
+      gap: 0.8rem;
+      margin-top: 0.4rem;
       color: var(--muted);
-      font-size: 0.95rem;
     }
 
     .hero-scroll .arrow {
-      width: 2.4rem;
-      height: 2.4rem;
-      border-radius: 999px;
-      border: 1px solid rgba(201, 168, 76, 0.18);
+      width: 2.5rem;
+      height: 2.5rem;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      animation: floatArrow 1.8s ease-in-out infinite;
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
-      gap: 1.5rem;
-      align-items: start;
-    }
-
-    .glass-card {
-      padding: 1.6rem;
-      border-radius: var(--radius-md);
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.08);
       background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(201, 168, 76, 0.12);
-      box-shadow: var(--shadow);
+      animation: floatArrow 1.9s ease-in-out infinite;
     }
 
-    .bio-card p {
+    .hero-stage-shell {
+      perspective: 1400px;
+    }
+
+    .hero-stage {
+      position: relative;
+      min-height: 660px;
+      border-radius: 36px;
+      padding: 1.6rem;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.025)),
+        rgba(8, 15, 30, 0.76);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: var(--shadow-xl);
+      overflow: hidden;
+      transform-style: preserve-3d;
+      --rotate-x: -10deg;
+      --rotate-y: -12deg;
+      transform: rotateX(var(--rotate-x)) rotateY(var(--rotate-y));
+      transition: transform 0.25s ease;
+    }
+
+    .hero-stage::before {
+      content: "";
+      position: absolute;
+      inset: 1px;
+      border-radius: inherit;
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.06), transparent 26%),
+        radial-gradient(circle at 20% 18%, rgba(101, 242, 208, 0.14), transparent 20%),
+        radial-gradient(circle at 85% 8%, rgba(245, 193, 93, 0.16), transparent 18%);
+      pointer-events: none;
+    }
+
+    .stage-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(101, 242, 208, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(101, 242, 208, 0.06) 1px, transparent 1px);
+      background-size: 52px 52px;
+      mask-image: radial-gradient(circle at center, black 20%, transparent 92%);
+      opacity: 0.4;
+      transform: translateZ(-120px) rotateX(78deg) scale(1.5);
+      transform-style: preserve-3d;
+    }
+
+    .stage-orbit {
+      position: absolute;
+      inset: 50% auto auto 50%;
+      width: 430px;
+      height: 430px;
+      transform-style: preserve-3d;
+      transform: translate3d(-50%, -50%, 0);
+    }
+
+    .ring {
+      position: absolute;
+      inset: 50% auto auto 50%;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transform-style: preserve-3d;
+    }
+
+    .ring-a {
+      width: 380px;
+      height: 380px;
+      margin-left: -190px;
+      margin-top: -190px;
+      border-color: rgba(101, 242, 208, 0.28);
+      transform: rotateX(76deg) rotateZ(0deg);
+      animation: spinZ 18s linear infinite;
+    }
+
+    .ring-b {
+      width: 300px;
+      height: 300px;
+      margin-left: -150px;
+      margin-top: -150px;
+      border-color: rgba(245, 193, 93, 0.28);
+      transform: rotateY(72deg) rotateX(10deg);
+      animation: spinY 14s linear infinite reverse;
+    }
+
+    .ring-c {
+      width: 210px;
+      height: 210px;
+      margin-left: -105px;
+      margin-top: -105px;
+      border-color: rgba(255, 255, 255, 0.12);
+      transform: rotateY(18deg) rotateX(70deg);
+      animation: spinZ 11s linear infinite;
+    }
+
+    .core {
+      position: absolute;
+      inset: 50% auto auto 50%;
+      width: 170px;
+      height: 170px;
+      margin-left: -85px;
+      margin-top: -85px;
+      border-radius: 38% 62% 56% 44% / 43% 43% 57% 57%;
+      background:
+        radial-gradient(circle at 35% 30%, rgba(255, 255, 255, 0.85), transparent 20%),
+        radial-gradient(circle at 45% 45%, rgba(101, 242, 208, 0.8), rgba(46, 199, 175, 0.28) 58%, rgba(7, 11, 20, 0.02) 100%);
+      box-shadow:
+        0 0 0 16px rgba(101, 242, 208, 0.05),
+        0 0 50px rgba(101, 242, 208, 0.3),
+        inset 0 -22px 40px rgba(5, 10, 20, 0.44);
+      animation: pulseMorph 8s ease-in-out infinite;
+    }
+
+    .core::before,
+    .core::after {
+      content: "";
+      position: absolute;
+      inset: -10px;
+      border-radius: inherit;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transform: translateZ(14px);
+    }
+
+    .core::after {
+      inset: 20px;
+      border-color: rgba(245, 193, 93, 0.26);
+      transform: translateZ(24px);
+    }
+
+    .node {
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      margin-left: -7px;
+      margin-top: -7px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, white, var(--amber));
+      box-shadow: 0 0 22px rgba(245, 193, 93, 0.58);
+      animation: nodePulse 3s ease-in-out infinite;
+    }
+
+    .node:nth-child(5) { top: 20%; left: 55%; animation-delay: 0.2s; }
+    .node:nth-child(6) { top: 72%; left: 26%; background: radial-gradient(circle at 30% 30%, white, var(--teal)); box-shadow: 0 0 22px rgba(101, 242, 208, 0.56); animation-delay: 0.5s; }
+    .node:nth-child(7) { top: 42%; left: 12%; animation-delay: 1s; }
+    .node:nth-child(8) { top: 58%; left: 85%; background: radial-gradient(circle at 30% 30%, white, var(--teal)); box-shadow: 0 0 22px rgba(101, 242, 208, 0.56); animation-delay: 1.4s; }
+    .node:nth-child(9) { top: 12%; left: 28%; animation-delay: 1.8s; }
+
+    .stage-panel,
+    .bento-card,
+    .project-card,
+    .contact-card,
+    .form-card,
+    .stat-card,
+    .skill-card {
+      position: relative;
+      border-radius: var(--radius-lg);
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.025)),
+        rgba(10, 17, 31, 0.72);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: var(--shadow-card);
+      overflow: hidden;
+    }
+
+    .stage-panel::before,
+    .bento-card::before,
+    .project-card::before,
+    .contact-card::before,
+    .form-card::before,
+    .stat-card::before,
+    .skill-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.04), transparent 32%);
+      pointer-events: none;
+    }
+
+    .stage-panel {
+      position: absolute;
+      padding: 1rem;
+      width: 220px;
+      backdrop-filter: blur(18px);
+      transform-style: preserve-3d;
+    }
+
+    .stage-panel h3,
+    .stage-panel p,
+    .bento-card h3,
+    .bento-card p,
+    .project-card p,
+    .contact-card h3,
+    .contact-card p,
+    .form-card p,
+    .skill-card h3,
+    .skill-card p {
       margin: 0;
-      color: #d7d2c6;
-      line-height: 1.9;
-      font-size: 1.04rem;
     }
 
-    .education-card {
+    .panel-top {
+      top: 28px;
+      right: 22px;
+      transform: translateZ(70px);
+    }
+
+    .panel-side {
+      bottom: 28px;
+      left: 22px;
+      width: 240px;
+      transform: translateZ(86px);
+    }
+
+    .panel-bottom {
+      right: 42px;
+      bottom: 52px;
+      width: 190px;
+      transform: translateZ(62px);
+    }
+
+    .stage-label {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.72rem;
+      color: var(--teal);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.6rem;
+    }
+
+    .stage-panel h3 {
+      font-size: 1rem;
+      margin-bottom: 0.45rem;
+    }
+
+    .stage-panel p {
+      color: var(--muted);
+      line-height: 1.65;
+      font-size: 0.9rem;
+    }
+
+    .metrics-row {
+      display: flex;
+      gap: 0.65rem;
+      margin-top: 0.85rem;
+      flex-wrap: wrap;
+    }
+
+    .metric {
+      flex: 1 1 84px;
+      min-width: 84px;
+      padding: 0.75rem;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .metric strong {
+      display: block;
+      font-family: "Syne", sans-serif;
+      font-size: 1.3rem;
+      color: var(--amber-soft);
+      margin-bottom: 0.15rem;
+    }
+
+    .metric span {
+      color: var(--muted);
+      font-size: 0.78rem;
+      line-height: 1.4;
+    }
+
+    .insight-grid {
       display: grid;
+      grid-template-columns: 1.25fr 1fr;
       gap: 1rem;
     }
 
-    .education-item {
-      padding: 1rem 0 0;
-      border-top: 1px solid rgba(201, 168, 76, 0.12);
+    .bento-card {
+      padding: 1.35rem;
     }
 
-    .education-item:first-of-type {
-      border-top: none;
-      padding-top: 0;
+    .bento-card.highlight {
+      background:
+        linear-gradient(135deg, rgba(101, 242, 208, 0.1), rgba(255, 255, 255, 0.03)),
+        rgba(10, 17, 31, 0.74);
     }
 
-    .education-item h3,
-    .education-item p {
-      margin: 0;
+    .bento-card h3,
+    .project-title,
+    .skill-card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 0.55rem;
     }
 
-    .education-item h3 {
-      font-size: 1.08rem;
-      margin-bottom: 0.3rem;
-    }
-
-    .education-item p {
+    .bento-card p,
+    .project-card p,
+    .skill-card p,
+    .contact-card p,
+    .form-card p {
       color: var(--muted);
-      line-height: 1.7;
+      line-height: 1.78;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 0.85rem;
+      margin-top: 1rem;
+    }
+
+    .timeline-item {
+      padding: 0.95rem 1rem;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .timeline-item strong {
+      display: block;
+      margin-bottom: 0.2rem;
+      font-size: 0.98rem;
+    }
+
+    .timeline-item span {
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.6;
     }
 
     .stats-grid {
-      margin-top: 1.6rem;
+      margin-top: 1rem;
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 1rem;
     }
 
     .stat-card {
-      padding: 1.25rem;
-      border-radius: 20px;
-      background: linear-gradient(180deg, rgba(201, 168, 76, 0.09), rgba(255, 255, 255, 0.02));
-      border: 1px solid rgba(201, 168, 76, 0.12);
+      padding: 1.2rem;
       text-align: center;
     }
 
     .stat-value {
       display: block;
-      font-family: "Playfair Display", serif;
-      font-size: clamp(2rem, 4vw, 3rem);
-      color: var(--gold-light);
-      line-height: 1;
-      margin-bottom: 0.45rem;
+      font-family: "Syne", sans-serif;
+      font-size: clamp(2.15rem, 4vw, 3.2rem);
+      color: var(--teal);
+      letter-spacing: -0.05em;
+      margin-bottom: 0.3rem;
     }
 
     .stat-label {
       color: var(--muted);
-      line-height: 1.5;
-      font-size: 0.95rem;
+      font-size: 0.92rem;
+      line-height: 1.55;
     }
 
-    .skills-layout {
+    .skills-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 1rem;
     }
 
-    .skill-group {
-      height: 100%;
+    .skill-card {
+      padding: 1.35rem;
     }
 
-    .skill-group h3 {
-      margin: 0 0 1rem;
-      font-size: 1.1rem;
-    }
-
-    .skill-group p {
-      margin: 0 0 1.2rem;
-      color: var(--muted);
-      line-height: 1.7;
+    .skills-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      margin-top: 1rem;
     }
 
     .skill-pill {
-      min-height: 2.45rem;
-      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+      transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
     }
 
     .skill-pill:hover {
       transform: translateY(-3px);
-      border-color: rgba(232, 201, 122, 0.34);
-      background: rgba(201, 168, 76, 0.15);
+      border-color: rgba(101, 242, 208, 0.24);
+      background: rgba(101, 242, 208, 0.1);
     }
 
-    .skill-pill.starred {
-      color: #120f07;
-      background: linear-gradient(135deg, var(--gold-light), var(--gold));
-      border-color: transparent;
+    .skill-pill.core {
+      background: linear-gradient(135deg, rgba(101, 242, 208, 0.2), rgba(255, 255, 255, 0.05));
+      border-color: rgba(101, 242, 208, 0.2);
+      color: #dcfffa;
     }
 
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1.2rem;
+      gap: 1rem;
     }
 
     .project-card {
-      position: relative;
-      height: 100%;
       display: grid;
       gap: 1rem;
-      padding: 1.55rem;
-      border-radius: 24px;
-      background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02)),
-        rgba(26, 25, 20, 0.9);
-      border: 1px solid rgba(201, 168, 76, 0.12);
-      box-shadow: 0 18px 46px rgba(0, 0, 0, 0.28);
-      transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
-      overflow: hidden;
-    }
-
-    .project-card::before {
-      content: "";
-      position: absolute;
-      inset: auto auto 0 0;
-      width: 100%;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, rgba(232, 201, 122, 0.8), transparent);
-      transform: scaleX(0.35);
-      opacity: 0;
-      transition: transform 0.3s ease, opacity 0.3s ease;
+      padding: 1.45rem;
+      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
     }
 
     .project-card:hover {
       transform: translateY(-8px);
-      border-color: rgba(232, 201, 122, 0.4);
-      box-shadow: 0 28px 52px rgba(201, 168, 76, 0.14);
+      border-color: rgba(101, 242, 208, 0.2);
+      box-shadow: 0 26px 54px rgba(0, 0, 0, 0.34);
     }
 
-    .project-card:hover::before {
-      opacity: 1;
-      transform: scaleX(1);
-    }
-
-    .project-meta {
+    .project-top {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
@@ -739,27 +934,24 @@ HOW TO DEPLOY ON GITHUB PAGES:
       gap: 0.8rem;
     }
 
-    .project-title {
-      margin: 0;
-      font-size: 1.25rem;
-    }
-
     .badge {
       display: inline-flex;
       align-items: center;
+      min-height: 2rem;
       padding: 0.42rem 0.72rem;
       border-radius: 999px;
-      font-family: "DM Mono", monospace;
-      font-size: 0.74rem;
-      color: var(--gold-light);
-      border: 1px solid rgba(201, 168, 76, 0.18);
-      background: rgba(201, 168, 76, 0.06);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.72rem;
+      color: var(--amber-soft);
+      background: rgba(245, 193, 93, 0.08);
+      border: 1px solid rgba(245, 193, 93, 0.16);
     }
 
-    .project-card p {
-      margin: 0;
-      color: #d8d2c7;
-      line-height: 1.8;
+    .project-tags,
+    .contact-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
     }
 
     .project-actions {
@@ -769,45 +961,33 @@ HOW TO DEPLOY ON GITHUB PAGES:
       gap: 0.8rem;
     }
 
-    .project-link {
-      color: #140f03;
-      background: linear-gradient(135deg, var(--gold-light), var(--gold));
-      border: none;
-      font-size: 0.95rem;
-      font-weight: 700;
-    }
-
-    .contact-wrap {
+    .contact-shell {
       display: grid;
-      grid-template-columns: minmax(0, 0.95fr) minmax(320px, 1.05fr);
-      gap: 1.2rem;
-      align-items: start;
-    }
-
-    .contact-cards {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: 0.9fr 1.1fr;
       gap: 1rem;
     }
 
-    .contact-card h3,
-    .contact-card p {
-      margin: 0;
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .contact-card,
+    .form-card {
+      padding: 1.35rem;
     }
 
     .contact-card h3 {
-      font-size: 1rem;
       margin-bottom: 0.5rem;
+      font-size: 1rem;
     }
 
-    .contact-card p,
     .contact-card a {
-      color: var(--muted);
-      line-height: 1.7;
+      color: #dfe7f9;
       word-break: break-word;
     }
 
-    .contact-form {
+    .form-card {
       display: grid;
       gap: 1rem;
     }
@@ -818,8 +998,8 @@ HOW TO DEPLOY ON GITHUB PAGES:
     }
 
     .field label {
-      font-size: 0.95rem;
-      color: #dfd9cb;
+      color: #d8e0ef;
+      font-size: 0.94rem;
     }
 
     .field input,
@@ -827,17 +1007,18 @@ HOW TO DEPLOY ON GITHUB PAGES:
       width: 100%;
       padding: 0.95rem 1rem;
       border-radius: 16px;
-      border: 1px solid rgba(201, 168, 76, 0.16);
-      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.04);
       color: var(--text);
       outline: none;
-      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
     }
 
     .field input:focus,
     .field textarea:focus {
-      border-color: rgba(232, 201, 122, 0.45);
-      box-shadow: 0 0 0 4px rgba(201, 168, 76, 0.1);
+      border-color: rgba(101, 242, 208, 0.34);
+      box-shadow: 0 0 0 4px rgba(101, 242, 208, 0.1);
+      background: rgba(255, 255, 255, 0.05);
     }
 
     .field textarea {
@@ -847,24 +1028,17 @@ HOW TO DEPLOY ON GITHUB PAGES:
 
     .error {
       min-height: 1rem;
-      color: #ffb4a0;
-      font-size: 0.86rem;
-    }
-
-    .form-note {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.7;
-      font-size: 0.95rem;
+      color: var(--danger);
+      font-size: 0.85rem;
     }
 
     .success-message {
       display: none;
       padding: 0.95rem 1rem;
       border-radius: 16px;
-      background: rgba(126, 231, 135, 0.1);
-      border: 1px solid rgba(126, 231, 135, 0.2);
-      color: #c9f5cf;
+      background: rgba(101, 242, 208, 0.12);
+      border: 1px solid rgba(101, 242, 208, 0.18);
+      color: var(--ok);
     }
 
     .success-message.show {
@@ -872,13 +1046,11 @@ HOW TO DEPLOY ON GITHUB PAGES:
     }
 
     .site-footer {
-      padding: 1.6rem 0 2.4rem;
-      border-top: 1px solid rgba(201, 168, 76, 0.1);
+      padding: 1.5rem 0 2.4rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
     }
 
     .footer-inner {
-      width: var(--container);
-      margin: 0 auto;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -887,38 +1059,24 @@ HOW TO DEPLOY ON GITHUB PAGES:
     }
 
     .footer-inner a {
-      color: var(--gold-light);
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(28px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
+      color: var(--teal);
     }
 
     .to-top {
       position: fixed;
-      right: 1.15rem;
-      bottom: 1.15rem;
-      z-index: 25;
-      width: 3.15rem;
-      height: 3.15rem;
+      right: 1rem;
+      bottom: 1rem;
+      z-index: 35;
+      width: 3.1rem;
+      height: 3.1rem;
       border-radius: 50%;
-      border: 1px solid rgba(201, 168, 76, 0.16);
-      background: rgba(15, 14, 11, 0.82);
-      backdrop-filter: blur(12px);
-      color: var(--gold-light);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(10, 17, 31, 0.78);
+      color: var(--teal);
+      backdrop-filter: blur(20px);
       opacity: 0;
       visibility: hidden;
-      transform: translateY(10px);
+      transform: translateY(12px);
       transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
       cursor: pointer;
     }
@@ -929,19 +1087,24 @@ HOW TO DEPLOY ON GITHUB PAGES:
       transform: translateY(0);
     }
 
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.72s ease, transform 0.72s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
     @keyframes blink {
       50% { opacity: 0; }
     }
 
     @keyframes riseIn {
-      from {
-        transform: translateY(110%);
-        opacity: 0;
-      }
-      to {
-        transform: translateY(0);
-        opacity: 1;
-      }
+      from { transform: translateY(115%); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
     }
 
     @keyframes floatArrow {
@@ -949,51 +1112,72 @@ HOW TO DEPLOY ON GITHUB PAGES:
       50% { transform: translateY(5px); }
     }
 
-    @media (max-width: 980px) {
+    @keyframes spinZ {
+      from { transform: rotateX(76deg) rotateZ(0deg); }
+      to { transform: rotateX(76deg) rotateZ(360deg); }
+    }
+
+    @keyframes spinY {
+      from { transform: rotateY(72deg) rotateX(10deg) rotateZ(0deg); }
+      to { transform: rotateY(72deg) rotateX(10deg) rotateZ(360deg); }
+    }
+
+    @keyframes pulseMorph {
+      0%, 100% { transform: translateZ(40px) scale(1); border-radius: 38% 62% 56% 44% / 43% 43% 57% 57%; }
+      50% { transform: translateZ(56px) scale(1.06); border-radius: 52% 48% 42% 58% / 54% 39% 61% 46%; }
+    }
+
+    @keyframes nodePulse {
+      0%, 100% { transform: scale(0.9); opacity: 0.78; }
+      50% { transform: scale(1.2); opacity: 1; }
+    }
+
+    @media (max-width: 1100px) {
       .hero-layout,
-      .about-grid,
-      .skills-layout,
-      .contact-wrap {
+      .insight-grid,
+      .contact-shell,
+      .skills-grid {
         grid-template-columns: 1fr;
       }
 
-      .projects-grid,
-      .contact-cards {
-        grid-template-columns: 1fr;
+      .hero-stage {
+        min-height: 620px;
       }
+    }
 
+    @media (max-width: 900px) {
       .stats-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
-      .hero-panel {
-        min-height: 0;
+      .projects-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
       }
     }
 
     @media (max-width: 760px) {
       :root {
         --nav-height: 74px;
-        --container: min(100vw - 1.25rem, 100%);
+        --container: min(100vw - 1.2rem, 100%);
       }
 
       section {
-        padding: 4.6rem 0;
+        padding: 4.7rem 0;
       }
 
       .nav-links {
         position: fixed;
-        top: calc(var(--nav-height) + 0.5rem);
-        left: 0.65rem;
-        right: 0.65rem;
+        top: calc(var(--nav-height) + 0.45rem);
+        left: 0.6rem;
+        right: 0.6rem;
         flex-direction: column;
         align-items: stretch;
         padding: 0.85rem;
-        border-radius: 22px;
-        background: rgba(19, 18, 14, 0.96);
-        border: 1px solid rgba(201, 168, 76, 0.14);
-        backdrop-filter: blur(18px);
-        box-shadow: var(--shadow);
+        border-radius: 24px;
+        background: rgba(8, 14, 25, 0.96);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: var(--shadow-xl);
         opacity: 0;
         pointer-events: none;
         transform: translateY(-10px);
@@ -1004,20 +1188,6 @@ HOW TO DEPLOY ON GITHUB PAGES:
         opacity: 1;
         pointer-events: auto;
         transform: translateY(0);
-      }
-
-      .nav-links a {
-        padding: 0.9rem 1rem;
-        border-radius: 14px;
-      }
-
-      .nav-links a::after {
-        display: none;
-      }
-
-      .nav-links a.active,
-      .nav-links a:hover {
-        background: rgba(201, 168, 76, 0.08);
       }
 
       .menu-toggle {
@@ -1032,17 +1202,31 @@ HOW TO DEPLOY ON GITHUB PAGES:
         min-width: auto;
       }
 
+      .hero-stage {
+        min-height: 560px;
+        transform: none;
+      }
+
+      .stage-orbit {
+        transform: translate3d(-50%, -50%, 0) scale(0.88);
+      }
+
+      .stage-panel {
+        width: auto;
+        max-width: 58%;
+      }
+
+      .panel-top { top: 18px; right: 18px; }
+      .panel-side { left: 18px; bottom: 18px; }
+      .panel-bottom { right: 18px; bottom: 142px; }
+
       .footer-inner {
         flex-direction: column;
         align-items: flex-start;
       }
     }
 
-    @media (max-width: 480px) {
-      .hero {
-        min-height: auto;
-      }
-
+    @media (max-width: 520px) {
       .hero-actions,
       .project-actions {
         flex-direction: column;
@@ -1055,20 +1239,45 @@ HOW TO DEPLOY ON GITHUB PAGES:
         width: 100%;
       }
 
+      .hero-stage {
+        min-height: 540px;
+        padding: 1rem;
+      }
+
+      .stage-orbit {
+        transform: translate3d(-50%, -50%, 0) scale(0.72);
+      }
+
+      .stage-panel {
+        max-width: 64%;
+        padding: 0.8rem;
+      }
+
       .stats-grid {
         grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
       }
     }
   </style>
 </head>
 <body>
-  <canvas id="hero-particles" aria-hidden="true"></canvas>
-  <div class="page-noise" aria-hidden="true"></div>
-  <div class="grid-overlay" aria-hidden="true"></div>
+  <canvas id="cosmic-canvas" aria-hidden="true"></canvas>
+  <div class="global-noise" aria-hidden="true"></div>
+  <div class="global-grid" aria-hidden="true"></div>
+  <div class="global-vignette" aria-hidden="true"></div>
 
   <header class="site-header" id="site-header">
     <div class="nav-shell">
-      <a class="logo" href="#hero" aria-label="Kushagra Chaudhary home">&lt;KC/&gt;</a>
+      <a class="logo" href="#hero" aria-label="Kushagra Chaudhary home">&lt;KC /&gt;</a>
       <nav class="nav-links" id="nav-links" aria-label="Primary">
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
@@ -1085,19 +1294,25 @@ HOW TO DEPLOY ON GITHUB PAGES:
     <section class="hero" id="hero">
       <div class="container hero-layout">
         <div class="hero-copy">
-          <div class="eyebrow reveal">Freelance Web Developer · Dehradun, India</div>
+          <div class="eyebrow reveal">AI-grade interface · Premium visual psychology</div>
           <h1 class="hero-title" aria-label="Kushagra Chaudhary">
             <span class="line"><span>Kushagra</span></span>
-            <span class="line"><span>Chaudhary</span></span>
+            <span class="line"><span><em>Chaudhary</em></span></span>
           </h1>
           <div class="hero-role reveal">
-            <span>I build as</span>
+            <span>I design as</span>
             <strong class="typewriter" id="typewriter-text">Web Developer</strong>
           </div>
-          <p class="reveal">Building real websites for real businesses — from Dehradun.</p>
+          <p class="hero-lead reveal">Building real websites for real businesses — from Dehradun. I create conversion-first digital experiences that feel premium, trustworthy, and future-ready across mobile, desktop, and live client delivery.</p>
+          <div class="hero-micro reveal">
+            <span class="micro-chip hot">13 Websites Built</span>
+            <span class="micro-chip">3 Live Client Projects</span>
+            <span class="micro-chip">IIT Madras Online</span>
+            <span class="micro-chip">React · Next.js · Node.js</span>
+          </div>
           <div class="hero-actions reveal">
-            <a class="button" href="#projects">View My Work</a>
-            <a class="ghost-button" href="#contact">Hire Me</a>
+            <a class="button magnetic" href="#projects">View My Work</a>
+            <a class="ghost-button magnetic" href="#contact">Hire Me</a>
           </div>
           <a class="hero-scroll reveal" href="#about" aria-label="Scroll to about section">
             <span class="arrow">&#8595;</span>
@@ -1105,60 +1320,96 @@ HOW TO DEPLOY ON GITHUB PAGES:
           </a>
         </div>
 
-        <aside class="hero-panel reveal" aria-label="Developer highlights">
-          <div class="panel-topline">
-            <span>Portfolio Snapshot</span>
-            <span class="status-dot">Available for work</span>
-          </div>
-          <div class="hero-card-stack">
-            <div class="hero-card featured">
-              <h3>Real delivery, not just demos</h3>
-              <p>13 independently built websites, including 3 live client projects for Dehradun businesses in healthcare, organic products, and hospitality.</p>
+        <div class="hero-stage-shell reveal">
+          <div class="hero-stage" id="hero-stage">
+            <div class="stage-grid"></div>
+            <div class="stage-orbit">
+              <div class="ring ring-a"></div>
+              <div class="ring ring-b"></div>
+              <div class="ring ring-c"></div>
+              <div class="core"></div>
+              <div class="node"></div>
+              <div class="node"></div>
+              <div class="node"></div>
+              <div class="node"></div>
+              <div class="node"></div>
             </div>
-            <div class="hero-card">
-              <h3>Core stack</h3>
-              <div class="chip-row">
-                <span class="chip">HTML5 / CSS3</span>
-                <span class="chip">JavaScript</span>
-                <span class="chip">React.js</span>
-                <span class="chip">Next.js</span>
-                <span class="chip">Node.js</span>
+
+            <div class="stage-panel panel-top">
+              <div class="stage-label">Perception Layer</div>
+              <h3>Psychology-based palette</h3>
+              <p>Navy builds trust, teal signals intelligence, amber drives action, and glass depth makes the interface feel premium instead of templated.</p>
+            </div>
+
+            <div class="stage-panel panel-side">
+              <div class="stage-label">AI Signal</div>
+              <h3>Interface tuned for clarity</h3>
+              <div class="metrics-row">
+                <div class="metric">
+                  <strong>Fast</strong>
+                  <span>Single-file, no build needed</span>
+                </div>
+                <div class="metric">
+                  <strong>Sharp</strong>
+                  <span>Intentional typography and hierarchy</span>
+                </div>
+                <div class="metric">
+                  <strong>Real</strong>
+                  <span>Client-tested project credibility</span>
+                </div>
               </div>
             </div>
-            <div class="hero-card">
-              <h3>Current path</h3>
-              <p>Pursuing a BS in Data Science &amp; Applications from IIT Madras Online while continuing freelance work and sharpening full-stack skills.</p>
+
+            <div class="stage-panel panel-bottom">
+              <div class="stage-label">3D Core</div>
+              <h3>Interactive neural object</h3>
+              <p>Mouse-reactive 3D motion, orbital rings, and live depth layering create the premium hero moment.</p>
             </div>
           </div>
-        </aside>
+        </div>
       </div>
     </section>
 
     <section id="about">
       <div class="container">
         <div class="section-heading reveal">
-          <div class="eyebrow">About Me</div>
-          <h2>Self-taught, client-tested, and focused on building work that feels professional on day one.</h2>
+          <div class="eyebrow">About</div>
+          <h2>Not another portfolio template. A deliberate personal brand built to earn trust in seconds.</h2>
           <p>I'm a self-taught web developer from Dehradun with a passion for building fast, beautiful, and functional websites. I've independently designed and deployed 13 websites — including 3 live client projects for Dehradun businesses. Currently pursuing a BS in Data Science &amp; Applications from IIT Madras Online while continuing to freelance and grow my skills in React, Next.js, and Node.js.</p>
         </div>
 
-        <div class="about-grid">
-          <article class="glass-card bio-card reveal">
-            <div class="eyebrow">Why I Build</div>
-            <p>I like websites that look sharp, load fast, and make businesses feel credible. My work leans mobile-first, conversion-aware, and practical for real owners who need a site that helps people trust them quickly.</p>
+        <div class="insight-grid">
+          <article class="bento-card highlight reveal">
+            <div class="eyebrow">Design Intelligence</div>
+            <h3>How this UI thinks</h3>
+            <p>This interface uses confidence colors and structured contrast to trigger trust, premium perception, and clear action flow. Teal communicates modern intelligence, amber draws attention to decision points, and the dark base keeps the experience cinematic and serious.</p>
+            <div class="timeline">
+              <div class="timeline-item">
+                <strong>IIT Madras</strong>
+                <span>BS in Data Science &amp; Applications (Online) · 2025-Present · Foundation Level</span>
+              </div>
+              <div class="timeline-item">
+                <strong>Class XII</strong>
+                <span>Dehradun · 2024-25</span>
+              </div>
+            </div>
           </article>
 
-          <aside class="glass-card education-card reveal">
-            <div class="eyebrow">Education</div>
-            <div class="education-item">
-              <h3>IIT Madras</h3>
-              <p>BS in Data Science &amp; Applications (Online) · 2025-Present · Foundation Level</p>
+          <article class="bento-card reveal">
+            <div class="eyebrow">Work Ethic</div>
+            <h3>Built for real businesses</h3>
+            <p>I like work that has pressure behind it: sites that need to look credible, load cleanly, explain a service fast, and help real owners convert visitors into inquiries.</p>
+            <div class="timeline">
+              <div class="timeline-item">
+                <strong>Languages</strong>
+                <span>Hindi (Native) · English (Professional)</span>
+              </div>
+              <div class="timeline-item">
+                <strong>Base</strong>
+                <span>GMS Road, Sriram Colony, Dehradun, Uttarakhand, India</span>
+              </div>
             </div>
-            <div class="education-item">
-              <h3>Class XII</h3>
-              <p>Dehradun · 2024-25</p>
-            </div>
-          </aside>
+          </article>
         </div>
 
         <div class="stats-grid">
@@ -1172,7 +1423,7 @@ HOW TO DEPLOY ON GITHUB PAGES:
           </div>
           <div class="stat-card reveal">
             <span class="stat-value" data-target="4">0</span>
-            <span class="stat-label">Technologies</span>
+            <span class="stat-label">Core Technologies</span>
           </div>
           <div class="stat-card reveal">
             <span class="stat-value" data-target="1">0</span>
@@ -1186,36 +1437,36 @@ HOW TO DEPLOY ON GITHUB PAGES:
       <div class="container">
         <div class="section-heading reveal">
           <div class="eyebrow">Skills</div>
-          <h2>Frontend-first, with enough backend and deployment knowledge to ship complete business websites.</h2>
-          <p>My strongest work sits at the intersection of clean UI, practical JavaScript, responsive execution, and business-ready setup from hosting to contact flow.</p>
+          <h2>Frontend polish, practical backend support, and deployment awareness that turns designs into live business assets.</h2>
+          <p>My strongest edge is not just writing code. It is shaping a site so it feels expensive, easy to trust, and ready for real users on actual phones.</p>
         </div>
 
-        <div class="skills-layout">
-          <article class="glass-card skill-group reveal">
+        <div class="skills-grid">
+          <article class="skill-card reveal">
             <h3>Frontend</h3>
-            <p>Where I spend most of my time shaping layout, interaction, and responsive polish.</p>
+            <p>My core strength sits in UI craft, layout precision, and interaction polish.</p>
             <div class="skills-cloud">
-              <span class="skill-pill starred">HTML5 / CSS3 ★</span>
-              <span class="skill-pill starred">JavaScript ★</span>
-              <span class="skill-pill starred">React.js ★</span>
+              <span class="skill-pill core">HTML5 / CSS3 ★</span>
+              <span class="skill-pill core">JavaScript ★</span>
+              <span class="skill-pill core">React.js ★</span>
               <span class="skill-pill">Next.js</span>
               <span class="skill-pill">Responsive Design</span>
               <span class="skill-pill">Mobile-First</span>
             </div>
           </article>
 
-          <article class="glass-card skill-group reveal">
+          <article class="skill-card reveal">
             <h3>Backend</h3>
-            <p>Enough backend comfort to connect forms, structure APIs, and support real project workflows.</p>
+            <p>I use backend tools where they support better user flow, inquiry handling, or structured data delivery.</p>
             <div class="skills-cloud">
               <span class="skill-pill">Node.js</span>
               <span class="skill-pill">REST APIs</span>
             </div>
           </article>
 
-          <article class="glass-card skill-group reveal">
+          <article class="skill-card reveal">
             <h3>Tools &amp; Workflow</h3>
-            <p>The practical pieces that help a site go live smoothly and feel complete for the client.</p>
+            <p>The invisible work that helps websites feel complete and professional after launch.</p>
             <div class="skills-cloud">
               <span class="skill-pill">Git &amp; GitHub</span>
               <span class="skill-pill">Web Hosting</span>
@@ -1232,13 +1483,13 @@ HOW TO DEPLOY ON GITHUB PAGES:
       <div class="container">
         <div class="section-heading reveal">
           <div class="eyebrow">Projects</div>
-          <h2>Live websites, local business work, and a growing body of projects that show range beyond practice tutorials.</h2>
-          <p>These are the projects that best represent how I handle real-world presentation, content-heavy builds, business messaging, and responsive user experience.</p>
+          <h2>Proof of execution across healthcare, hospitality, local business branding, and long-form content architecture.</h2>
+          <p>These projects show more than visual taste. They show delivery discipline, content handling, SEO thinking, and an understanding of what local businesses need from a website.</p>
         </div>
 
         <div class="projects-grid">
           <article class="project-card reveal">
-            <div class="project-meta">
+            <div class="project-top">
               <h3 class="project-title">Yog Arogyadham</h3>
               <span class="badge">Healthcare / Yoga Therapy · Live Client · Dehradun</span>
             </div>
@@ -1253,12 +1504,12 @@ HOW TO DEPLOY ON GITHUB PAGES:
               <span class="tag">WhatsApp API</span>
             </div>
             <div class="project-actions">
-              <a class="project-link" href="https://yogaarogyadham.studio" target="_blank" rel="noreferrer">Visit Live Site</a>
+              <a class="project-link magnetic" href="https://yogaarogyadham.studio" target="_blank" rel="noreferrer">Visit Live Site</a>
             </div>
           </article>
 
           <article class="project-card reveal">
-            <div class="project-meta">
+            <div class="project-top">
               <h3 class="project-title">Kakran Organic</h3>
               <span class="badge">Organic Products Brand · Live Client · Dehradun</span>
             </div>
@@ -1271,12 +1522,12 @@ HOW TO DEPLOY ON GITHUB PAGES:
               <span class="tag">Product Catalogue</span>
             </div>
             <div class="project-actions">
-              <a class="project-link" href="https://kakranorganic.me" target="_blank" rel="noreferrer">Visit Live Site</a>
+              <a class="project-link magnetic" href="https://kakranorganic.me" target="_blank" rel="noreferrer">Visit Live Site</a>
             </div>
           </article>
 
           <article class="project-card reveal">
-            <div class="project-meta">
+            <div class="project-top">
               <h3 class="project-title">Hotel Ajanta Dehradun</h3>
               <span class="badge">Hospitality · Client Website · Dehradun</span>
             </div>
@@ -1289,12 +1540,12 @@ HOW TO DEPLOY ON GITHUB PAGES:
               <span class="tag">Booking UI</span>
             </div>
             <div class="project-actions">
-              <a class="project-link" href="https://kushagra5555.github.io/hotel-ajanta/" target="_blank" rel="noreferrer">Preview Project</a>
+              <a class="project-link magnetic" href="https://kushagra5555.github.io/hotel-ajanta/" target="_blank" rel="noreferrer">Preview Project</a>
             </div>
           </article>
 
           <article class="project-card reveal">
-            <div class="project-meta">
+            <div class="project-top">
               <h3 class="project-title">+10 More Projects</h3>
               <span class="badge">Personal &amp; Practice Projects</span>
             </div>
@@ -1306,7 +1557,7 @@ HOW TO DEPLOY ON GITHUB PAGES:
               <span class="tag">Responsive Design</span>
             </div>
             <div class="project-actions">
-              <a class="project-link" href="https://github.com/kushagra5555" target="_blank" rel="noreferrer">View GitHub</a>
+              <a class="project-link magnetic" href="https://github.com/kushagra5555" target="_blank" rel="noreferrer">View GitHub</a>
             </div>
           </article>
         </div>
@@ -1321,48 +1572,45 @@ HOW TO DEPLOY ON GITHUB PAGES:
           <p>Based in Dehradun · Available for freelance &amp; full-time roles</p>
         </div>
 
-        <div class="contact-wrap">
-          <div class="contact-cards">
-            <article class="glass-card contact-card reveal">
+        <div class="contact-shell">
+          <div class="contact-grid">
+            <article class="contact-card reveal">
               <h3>Phone</h3>
               <p><a href="tel:+918077694948">+91 80776 94948</a></p>
             </article>
-            <article class="glass-card contact-card reveal">
+            <article class="contact-card reveal">
               <h3>Email</h3>
               <p><a href="mailto:kushagra44555@gmail.com">kushagra44555@gmail.com</a></p>
             </article>
-            <article class="glass-card contact-card reveal">
+            <article class="contact-card reveal">
               <h3>Location</h3>
               <p>GMS Road, Sriram Colony, Dehradun, Uttarakhand</p>
             </article>
-            <article class="glass-card contact-card reveal">
+            <article class="contact-card reveal">
               <h3>GitHub</h3>
               <p><a href="https://github.com/kushagra5555" target="_blank" rel="noreferrer">github.com/kushagra5555</a></p>
             </article>
           </div>
 
-          <article class="glass-card reveal">
-            <form class="contact-form" id="contact-form" action="mailto:kushagra44555@gmail.com" method="post" enctype="text/plain" novalidate>
+          <article class="form-card reveal">
+            <form id="contact-form" action="mailto:kushagra44555@gmail.com" method="post" enctype="text/plain" novalidate>
               <div class="field">
                 <label for="name">Name</label>
                 <input id="name" name="name" type="text" placeholder="Your name">
                 <div class="error" id="name-error"></div>
               </div>
-
               <div class="field">
                 <label for="email">Email</label>
-                <input id="email" name="email" type="email" placeholder="your@email.com">
+                <input id="email" name="email" type="email" placeholder="you@example.com">
                 <div class="error" id="email-error"></div>
               </div>
-
               <div class="field">
                 <label for="message">Message</label>
-                <textarea id="message" name="message" placeholder="Tell me about your project, role, or idea."></textarea>
+                <textarea id="message" name="message" placeholder="Tell me about your project, business, or role."></textarea>
                 <div class="error" id="message-error"></div>
               </div>
-
-              <button class="submit-button" type="submit">Send Message</button>
-              <p class="form-note">This form validates in the browser and then opens your email app using `mailto:` so you can send the message directly.</p>
+              <button class="submit-button magnetic" type="submit">Send Message</button>
+              <p>This form validates in the browser and then opens your email app using `mailto:` so you can send the message directly.</p>
               <div class="success-message" id="success-message" role="status" aria-live="polite">Thanks! I'll get back to you soon.</div>
             </form>
           </article>
@@ -1381,20 +1629,56 @@ HOW TO DEPLOY ON GITHUB PAGES:
   <button class="to-top" id="to-top" type="button" aria-label="Scroll to top">&#8593;</button>
 
   <script>
+    const body = document.body;
+    const navLinks = document.getElementById("nav-links");
+    const menuToggle = document.getElementById("menu-toggle");
+    const header = document.getElementById("site-header");
+    const toTopButton = document.getElementById("to-top");
+    const heroStage = document.getElementById("hero-stage");
+    const navAnchors = [...navLinks.querySelectorAll("a")];
+    const sections = [...document.querySelectorAll("main section[id]")];
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("open");
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      body.classList.toggle("menu-open", isOpen);
+    });
+
+    navAnchors.forEach((anchor) => {
+      anchor.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        body.classList.remove("menu-open");
+      });
+    });
+
+    function handleScrollUI() {
+      const y = window.scrollY;
+      header.classList.toggle("scrolled", y > 20);
+      toTopButton.classList.toggle("show", y > 320);
+    }
+
+    handleScrollUI();
+    window.addEventListener("scroll", handleScrollUI, { passive: true });
+
+    toTopButton.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
     const typewriterEl = document.getElementById("typewriter-text");
     const roles = ["Web Developer", "React Developer", "Freelance Dev", "UI Builder"];
     let roleIndex = 0;
     let charIndex = 0;
     let deleting = false;
 
-    function tickTypewriter() {
+    function typeTick() {
       const current = roles[roleIndex];
       if (!deleting) {
         charIndex += 1;
         typewriterEl.textContent = current.slice(0, charIndex);
         if (charIndex === current.length) {
           deleting = true;
-          setTimeout(tickTypewriter, 1350);
+          setTimeout(typeTick, 1200);
           return;
         }
       } else {
@@ -1405,45 +1689,10 @@ HOW TO DEPLOY ON GITHUB PAGES:
           roleIndex = (roleIndex + 1) % roles.length;
         }
       }
-      const speed = deleting ? 45 : 90;
-      setTimeout(tickTypewriter, speed);
+      setTimeout(typeTick, deleting ? 42 : 85);
     }
 
-    setTimeout(tickTypewriter, 700);
-
-    const header = document.getElementById("site-header");
-    const toTopButton = document.getElementById("to-top");
-
-    function handleScrollUI() {
-      const y = window.scrollY;
-      header.classList.toggle("scrolled", y > 18);
-      toTopButton.classList.toggle("show", y > 300);
-    }
-
-    handleScrollUI();
-    window.addEventListener("scroll", handleScrollUI, { passive: true });
-
-    toTopButton.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
-
-    const menuToggle = document.getElementById("menu-toggle");
-    const navLinks = document.getElementById("nav-links");
-    const navAnchors = navLinks.querySelectorAll("a");
-
-    menuToggle.addEventListener("click", () => {
-      const isOpen = navLinks.classList.toggle("open");
-      menuToggle.setAttribute("aria-expanded", String(isOpen));
-      document.body.classList.toggle("menu-open", isOpen);
-    });
-
-    navAnchors.forEach((anchor) => {
-      anchor.addEventListener("click", () => {
-        navLinks.classList.remove("open");
-        menuToggle.setAttribute("aria-expanded", "false");
-        document.body.classList.remove("menu-open");
-      });
-    });
+    setTimeout(typeTick, 650);
 
     const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -1452,7 +1701,7 @@ HOW TO DEPLOY ON GITHUB PAGES:
           revealObserver.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.18 });
+    }, { threshold: 0.16 });
 
     document.querySelectorAll(".reveal").forEach((el) => revealObserver.observe(el));
 
@@ -1461,14 +1710,12 @@ HOW TO DEPLOY ON GITHUB PAGES:
         if (!entry.isIntersecting) return;
         const el = entry.target;
         const target = Number(el.dataset.target || 0);
-        let current = 0;
-        const duration = 1400;
-        const start = performance.now();
+        const startTime = performance.now();
+        const duration = 1300;
 
         function update(now) {
-          const progress = Math.min((now - start) / duration, 1);
-          current = Math.floor(progress * target);
-          el.textContent = String(current);
+          const progress = Math.min((now - startTime) / duration, 1);
+          el.textContent = String(Math.floor(progress * target));
           if (progress < 1) {
             requestAnimationFrame(update);
           } else {
@@ -1483,17 +1730,15 @@ HOW TO DEPLOY ON GITHUB PAGES:
 
     document.querySelectorAll(".stat-value").forEach((el) => statObserver.observe(el));
 
-    const sections = [...document.querySelectorAll("main section[id]")];
-    const navMap = new Map([...navAnchors].map((anchor) => [anchor.getAttribute("href").slice(1), anchor]));
-
+    const navMap = new Map(navAnchors.map((anchor) => [anchor.getAttribute("href").slice(1), anchor]));
     const sectionObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (!entry.isIntersecting) return;
         navAnchors.forEach((anchor) => anchor.classList.remove("active"));
-        const activeLink = navMap.get(entry.target.id);
-        if (activeLink) activeLink.classList.add("active");
+        const link = navMap.get(entry.target.id);
+        if (link) link.classList.add("active");
       });
-    }, { threshold: 0.45, rootMargin: "-20% 0px -35% 0px" });
+    }, { threshold: 0.45, rootMargin: "-15% 0px -35% 0px" });
 
     sections.forEach((section) => sectionObserver.observe(section));
 
@@ -1528,67 +1773,121 @@ HOW TO DEPLOY ON GITHUB PAGES:
     });
 
     form.addEventListener("submit", (event) => {
-      const results = Object.values(fields).map(validateField);
-      const allValid = results.every(Boolean);
-      if (!allValid) {
+      const valid = Object.values(fields).map(validateField).every(Boolean);
+      if (!valid) {
         event.preventDefault();
         successMessage.classList.remove("show");
         return;
       }
-
       successMessage.classList.add("show");
     });
 
-    const canvas = document.getElementById("hero-particles");
+    document.addEventListener("pointermove", (event) => {
+      const x = (event.clientX / window.innerWidth) * 100;
+      const y = (event.clientY / window.innerHeight) * 100;
+      document.documentElement.style.setProperty("--spot-x", x + "%");
+      document.documentElement.style.setProperty("--spot-y", y + "%");
+    });
+
+    if (heroStage) {
+      heroStage.addEventListener("pointermove", (event) => {
+        const rect = heroStage.getBoundingClientRect();
+        const px = (event.clientX - rect.left) / rect.width;
+        const py = (event.clientY - rect.top) / rect.height;
+        const rotateY = (px - 0.5) * 18;
+        const rotateX = (0.5 - py) * 16;
+        heroStage.style.setProperty("--rotate-x", rotateX.toFixed(2) + "deg");
+        heroStage.style.setProperty("--rotate-y", rotateY.toFixed(2) + "deg");
+      });
+
+      heroStage.addEventListener("pointerleave", () => {
+        heroStage.style.setProperty("--rotate-x", "-10deg");
+        heroStage.style.setProperty("--rotate-y", "-12deg");
+      });
+    }
+
+    document.querySelectorAll(".magnetic").forEach((button) => {
+      button.addEventListener("pointermove", (event) => {
+        const rect = button.getBoundingClientRect();
+        const x = event.clientX - rect.left - rect.width / 2;
+        const y = event.clientY - rect.top - rect.height / 2;
+        button.style.transform = "translate(" + (x * 0.06).toFixed(2) + "px," + (y * 0.06).toFixed(2) + "px)";
+      });
+
+      button.addEventListener("pointerleave", () => {
+        button.style.transform = "";
+      });
+    });
+
+    const canvas = document.getElementById("cosmic-canvas");
     const ctx = canvas.getContext("2d");
     const particles = [];
-    const particleCount = 46;
+    const lines = [];
 
     function resizeCanvas() {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
     }
 
-    function createParticles() {
+    function buildScene() {
       particles.length = 0;
-      for (let i = 0; i < particleCount; i += 1) {
+      lines.length = 0;
+      const count = Math.min(70, Math.floor(window.innerWidth / 24));
+      for (let i = 0; i < count; i += 1) {
         particles.push({
           x: Math.random() * canvas.width,
           y: Math.random() * canvas.height,
-          r: Math.random() * 1.8 + 0.6,
-          vx: (Math.random() - 0.5) * 0.22,
-          vy: (Math.random() - 0.5) * 0.22,
-          alpha: Math.random() * 0.7 + 0.18
+          r: Math.random() * 2 + 0.5,
+          vx: (Math.random() - 0.5) * 0.18,
+          vy: (Math.random() - 0.5) * 0.18,
+          hue: Math.random() > 0.5 ? "101,242,208" : "245,193,93",
+          alpha: Math.random() * 0.65 + 0.18
         });
       }
     }
 
-    function drawParticles() {
+    function drawScene() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      particles.forEach((particle) => {
-        particle.x += particle.vx;
-        particle.y += particle.vy;
+      for (let i = 0; i < particles.length; i += 1) {
+        const p = particles[i];
+        p.x += p.vx;
+        p.y += p.vy;
+        if (p.x < -20) p.x = canvas.width + 20;
+        if (p.x > canvas.width + 20) p.x = -20;
+        if (p.y < -20) p.y = canvas.height + 20;
+        if (p.y > canvas.height + 20) p.y = -20;
 
-        if (particle.x < 0 || particle.x > canvas.width) particle.vx *= -1;
-        if (particle.y < 0 || particle.y > canvas.height) particle.vy *= -1;
+        for (let j = i + 1; j < particles.length; j += 1) {
+          const q = particles[j];
+          const dx = p.x - q.x;
+          const dy = p.y - q.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 130) {
+            ctx.strokeStyle = "rgba(101,242,208," + (0.07 * (1 - dist / 130)).toFixed(3) + ")";
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(p.x, p.y);
+            ctx.lineTo(q.x, q.y);
+            ctx.stroke();
+          }
+        }
 
         ctx.beginPath();
-        ctx.fillStyle = "rgba(232, 201, 122," + particle.alpha + ")";
-        ctx.shadowColor = "rgba(201, 168, 76, 0.5)";
-        ctx.shadowBlur = 14;
-        ctx.arc(particle.x, particle.y, particle.r, 0, Math.PI * 2);
+        ctx.fillStyle = "rgba(" + p.hue + "," + p.alpha + ")";
+        ctx.shadowColor = "rgba(" + p.hue + ",0.4)";
+        ctx.shadowBlur = 16;
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
         ctx.fill();
-        ctx.closePath();
-      });
-      requestAnimationFrame(drawParticles);
+      }
+      requestAnimationFrame(drawScene);
     }
 
     resizeCanvas();
-    createParticles();
-    drawParticles();
+    buildScene();
+    drawScene();
     window.addEventListener("resize", () => {
       resizeCanvas();
-      createParticles();
+      buildScene();
     });
   </script>
 </body>
